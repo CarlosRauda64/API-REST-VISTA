@@ -7,6 +7,9 @@ const message = document.querySelector("#error-login");
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    const data2 = await fetch(endpoint);
+    const response2 = await data2.json();
+    console.log(response2);
     try {
         if (email.value !== "" && password.value !== "") {
             const data = await fetch(endpoint + `?correo=${email.value}`);
