@@ -1,11 +1,10 @@
 const endpoint = "https://api-rest-django-1ggr.onrender.com/api/usuarios/";
 
-const form = document.querySelector("#login");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const message = document.querySelector("#error-login");
 
-form.addEventListener("submit", async (e) => {
+login = async () => {
     e.preventDefault();
     const data2 = await fetch(endpoint);
     const response2 = await data2.json();
@@ -29,4 +28,4 @@ form.addEventListener("submit", async (e) => {
     } catch (error) {
         message.innerHTML = "Email o Contraseña incorrecta";
     }
-});
+}
